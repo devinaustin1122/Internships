@@ -12,6 +12,10 @@ html {
   font-family: "Montserrat", sans-serif;
 }
 
+section {
+  padding: 1em;
+}
+
 html,
 body {
   width: 100vw;
@@ -20,8 +24,28 @@ body {
 
 h1 {
   font-weight: 500;
+  font-size: 2rem;
+  margin: 1rem 0;
 }
 
 p {
   color: gray;
+}
+
+@media screen and (min-width: 600px) {
+  section {
+    padding: 2em;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  section {
+    padding: 4em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  section {
+    padding: 4em;
+  }
 }

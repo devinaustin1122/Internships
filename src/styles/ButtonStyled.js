@@ -7,12 +7,17 @@ const ButtonStyled = styled.input.attrs({ type: "button" })`
   font-weight: 500;
   font-size: 1em;
   padding: 1em;
-  box-shadow: 5px 5px 5px grey;
+  margin: 1rem 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   ${(props) =>
     props.backgroundColor &&
     css`
       background-color: ${props.backgroundColor};
     `}
+
+  &:hover {
+    box-shadow: none;
+  }
 `;
 
 export default ButtonStyled;

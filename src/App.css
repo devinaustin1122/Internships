@@ -1,34 +1,102 @@
+:root {
+  --primary-color: #0085ff;
+  --primary-text-color: white;
+  --secondary-color: #004280;
+  --secondary-text-color: white;
+  --accent-color: #4da9ff;
+  --accent-text-color: white;
+}
+
+#root,
 .app {
   width: 100vw;
   height: 100vh;
 }
 
 .app {
-  padding: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-grow: 1;
+  max-width: 2000px;
 }
 
 .login {
-  height: 100%;
   display: flex;
-  justify-self: center;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-.login .container {
+.hero__logo {
+  width: 0.5rem;
+}
+
+[class^="hero__img"] {
+  display: none;
+}
+
+.form {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__content {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  width: 100%;
 }
 
-.mb-1 {
-  margin-bottom: 15px;
-}
+@media screen and (min-width: 900px) {
+  .login {
+    background-color: white;
+    flex-direction: row;
+  }
 
-.mb-2 {
-  margin-bottom: 30px;
-}
+  .hero {
+    background-color: var(--primary-color);
+    flex-grow: 1;
+  }
 
-.mb-3 {
-  margin-bottom: 45px;
+  [class^="hero__img"] {
+    display: block;
+  }
+
+  .hero__img--right {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .hero__img--left {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: scale(-1, -1);
+  }
+
+  .form {
+    flex-grow: 1;
+  }
+  .form__content {
+    max-width: 400px;
+  }
 }

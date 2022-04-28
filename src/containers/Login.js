@@ -5,25 +5,22 @@ import LinkStyled from "../styles/LinkStyled";
 function Login() {
   return (
     <div className="login">
-      <div className="container">
-        <h1 className="mb-1">INTERNSHIPS</h1>
-        <p className="mb-3">
-          the app for creating and managing internships for your organization
-        </p>
-        <TextboxStyled placeholder="USERNAME" className="mb-1" />
-        <TextboxStyled placeholder="PASSWORD" className="mb-3" />
-        <ButtonStyled
-          backgroundColor={"#004280"}
-          value="LOGIN"
-          className="mb-2"
-        />
-        <LinkStyled className="mb-2">forgot your password?</LinkStyled>
-        <ButtonStyled
-          backgroundColor={"#64CC6F"}
-          value="CREATE AN ACCOUNT"
-          className="mb-2"
-        />
-      </div>
+      <section className="hero">
+        <img className="hero__img--left" src="corner.svg" />
+        <img className="hero__img--right" src="corner.svg" />
+        <img className="hero__img" src="internship.svg" />
+        <img className="hero__logo" src="logo.svg" />
+        <h1 className="hero__title">INTERNSHIPS</h1>
+      </section>
+      <section className="form">
+        <form className="form__content">
+          <TextboxStyled placeholder="USERNAME" />
+          <TextboxStyled placeholder="PASSWORD" />
+          <ButtonStyled backgroundColor={"#004280"} value="LOGIN" />
+          <LinkStyled>forgot your password?</LinkStyled>
+          <ButtonStyled backgroundColor={"#64CC6F"} value="CREATE AN ACCOUNT" />
+        </form>
+      </section>
     </div>
   );
 }
