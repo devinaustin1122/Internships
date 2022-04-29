@@ -31,21 +31,3 @@ h1 {
 p {
   color: gray;
 }
-
-@media screen and (min-width: 600px) {
-  section {
-    padding: 2em;
-  }
-}
-
-@media screen and (min-width: 900px) {
-  section {
-    padding: 4em;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  section {
-    padding: 4em;
-  }
-}

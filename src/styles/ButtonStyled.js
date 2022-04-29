@@ -1,7 +1,8 @@
 import styled, { css } from "styled-components";
 
 const ButtonStyled = styled.input.attrs({ type: "button" })`
-  background-color: green;
+  width: 100%;
+  background-color: var(--secondary-color);
   border: none;
   color: white;
   font-weight: 500;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const TextboxStyled = styled.input.attrs({ type: "text" })`
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 300;
   color: grey;
   background-color: #f5f5f5;

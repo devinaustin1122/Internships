@@ -1,12 +1,13 @@
+import { BrowserRouter } from "react-router-dom";
 import Login from "./containers/Login";
 import "./App.css";
 
 function App() {
   return (
     <div className="app">
-      <div className="content">
+      <BrowserRouter>
         <Login />
-      </div>
+      </BrowserRouter>
     </div>
   );
 }
