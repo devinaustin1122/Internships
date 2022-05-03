@@ -1,36 +1,39 @@
 import axios from "axios";
-import bcrypt from "bcryptjs/dist/bcrypt";
 import { useState } from "react";
-import { Routes, Route, Navigate, Link } from "react-router-dom";
+import { Routes, Route, Navigate, Link, useNavigate } from "react-router-dom";
 import StyledTextbox from "../styles/StyledTexbox";
 import StyledButton from "../styles/StyledButton";
+import StyledError from "../styles/StyledError";
+import logo from "../logo.svg";
 
 function Login(props) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirm, setConfirm] = useState("");
+  let navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const [input, setInput] = useState({
+    username: "",
+    password: "",
+    confirm: "",
+  });
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log("username: " + username);
-    var hash = bcrypt.hashSync(password, 8);
-    console.log(hash);
-
-    axios
-      .post("http://localhost:3001/users/authenticate", {
-        username,
-        password,
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    await axios.post("http://localhost:3001/users/authenticate", {
+      username: input.username,
+      password: input.password,
+    });
   };
 
-  const handleCreate = (e) => {
+  const handleCreate = async (e) => {
+    console.log("hello?");
+
     e.preventDefault();
+    if (input.password === input.confirm) {
+      await axios.post("http://localhost:3001/users/create", {
+        username: input.username,
+        password: input.password,
+      });
+      navigate("/home");
+    }
   };
 
   const handleRecover = (e) => {
@@ -39,81 +42,102 @@ function Login(props) {
 
   return (
     <section className="login">
-      <img className="login__logo" src="logo.svg" />
-      <h1 className="login__heading">INTERNSHIPS</h1>
-      <Routes>
-        <Route
-          path="/login"
-          element={
-            <form onSubmit={handleLogin} className="form">
-              <StyledTextbox
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                placeholder="USERNAME"
-                type="text"
-              />
-              <StyledTextbox
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="PASSWORD"
-                type="password"
-              />
-              <StyledButton value="LOGIN" type="submit" />
-              <Link to={"/account/recover"}>forgot your password?</Link>
-              <Link to={"/account/create"}>
-                <StyledButton
-                  backgroundColor={"#64CC6F"}
-                  type="button"
-                  value="CREATE AN ACCOUNT"
+      <div className="login__container">
+        <img className="login__logo" src={logo} />
+        <h1 className="login__heading">INTERNSHIPS</h1>
+        <Routes>
+          <Route
+            path="/login"
+            element={
+              <form onSubmit={handleLogin} className="form">
+                <StyledTextbox
+                  value={input.username}
+                  onChange={(e) =>
+                    setInput({ ...input, username: e.target.value })
+                  }
+                  placeholder="USERNAME"
+                  type="text"
+                  required
                 />
-              </Link>
-            </form>
-          }
-        />
-        <Route
-          path="/account/create"
-          element={
-            <form onSubmit={handleCreate} className="form">
-              <StyledTextbox
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                placeholder="USERNAME"
-                type="text"
-              />
-              <StyledTextbox
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="PASSWORD"
-                type="password"
-              />
-              <StyledTextbox
-                value={confirm}
-                onChange={(e) => setConfirm(e.target.value)}
-                placeholder="Confirm password"
-                type="password"
-              />
-              <StyledButton value="CREATE ACCOUNT" type="submit" />
-              <Link to={"/"}>return to login</Link>
-            </form>
-          }
-        />
-        <Route
-          path="/account/recover"
-          element={
-            <form onSubmit={handleRecover} className="form">
-              <StyledTextbox
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                placeholder="USERNAME"
-                type="text"
-              />
-              <StyledButton value="SEND RECOVERY EMAIL" type="submit" />
-              <Link to={"/login"}>return to login</Link>
-            </form>
-          }
-        />
-        <Route path="*" element={<Navigate to="/login" />} />{" "}
-      </Routes>
+                <StyledTextbox
+                  value={input.password}
+                  onChange={(e) => {
+                    setInput({ ...input, password: e.target.value });
+                  }}
+                  placeholder="PASSWORD"
+                  type="password"
+                  required
+                />
+                <StyledButton value="LOGIN" type="submit" />
+                <Link to={"/account/recover"}>forgot your password?</Link>
+                <Link to={"/account/create"}>
+                  <StyledButton
+                    backgroundColor={"#64CC6F"}
+                    type="button"
+                    value="CREATE AN ACCOUNT"
+                  />
+                </Link>
+              </form>
+            }
+          />
+          <Route
+            path="/account/create"
+            element={
+              <form onSubmit={handleCreate} className="form">
+                <StyledTextbox
+                  value={input.username}
+                  onChange={(e) => {
+                    setInput({ ...input, username: e.target.value });
+                  }}
+                  placeholder="USERNAME"
+                  type="text"
+                  required
+                />
+                <StyledTextbox
+                  value={input.password}
+                  onChange={(e) => {
+                    setInput({ ...input, password: e.target.value });
+                  }}
+                  placeholder="PASSWORD"
+                  type="password"
+                  required
+                />
+                <StyledTextbox
+                  value={input.confirm}
+                  onChange={(e) => {
+                    setInput({ ...input, confirm: e.target.value });
+                  }}
+                  invalid={input.confirm !== input.password}
+                  placeholder="CONFIRM PASSWORD"
+                  type="password"
+                  required
+                />
+                <StyledButton value="CREATE ACCOUNT" type="submit" />
+                <Link to={"/"}>return to login</Link>
+              </form>
+            }
+          />
+          <Route
+            path="/account/recover"
+            element={
+              <form onSubmit={handleRecover} className="form">
+                <StyledTextbox
+                  value={input.username}
+                  onChange={(e) => {
+                    setInput({ ...input, username: e.target.value });
+                  }}
+                  placeholder="USERNAME"
+                  type="text"
+                  required
+                />
+                <StyledButton value="SEND RECOVERY EMAIL" type="submit" />
+                <Link to={"/login"}>return to login</Link>
+              </form>
+            }
+          />
+          <Route path="*" element={<Navigate to="/login" />} />{" "}
+        </Routes>
+      </div>
     </section>
   );
 }
