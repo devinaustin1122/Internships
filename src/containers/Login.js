@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Routes, Route, Navigate, Link, useNavigate } from "react-router-dom";
 import StyledTextbox from "../styles/StyledTexbox";
 import StyledButton from "../styles/StyledButton";
-import StyledError from "../styles/StyledError";
 import logo from "../logo.svg";
 
 function Login(props) {
@@ -17,15 +16,16 @@ function Login(props) {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:3001/users/authenticate", {
-      username: input.username,
-      password: input.password,
-    });
+    axios
+      .post("http://localhost:3001/users/authenticate", {
+        username: input.username,
+        password: input.password,
+      })
+      .then(({ data }) => props.setUser(data))
+      .catch((err) => console.log(err));
   };
 
   const handleCreate = async (e) => {
-    console.log("hello?");
-
     e.preventDefault();
     if (input.password === input.confirm) {
       await axios.post("http://localhost:3001/users/create", {
