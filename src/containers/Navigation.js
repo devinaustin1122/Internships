@@ -1,5 +1,6 @@
 import { useState } from "react";
 import menu from "../menu.svg";
+import tie from "../tie.svg";
 
 const Navigation = (props) => {
   const [toggle, setToggle] = useState(false);
@@ -11,6 +12,7 @@ const Navigation = (props) => {
 
   return (
     <nav className="navbar">
+      <img className="navbar__icon" src={tie} />
       <img
         className="navbar__toggle"
         src={menu}
