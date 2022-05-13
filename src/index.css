@@ -10,6 +10,7 @@
 
 html {
   font-family: "Montserrat", sans-serif;
+  margin-bottom: 5rem;
 }
 
 section {
@@ -19,7 +20,7 @@ section {
 hr {
   margin: 1rem;
   border: none;
-  border-bottom: solid 1px rgb(226, 226, 226);
+  border-bottom: solid 1px #e2e2e2;
 }
 
 html,

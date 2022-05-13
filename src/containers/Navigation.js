@@ -12,18 +12,21 @@ const Navigation = (props) => {
 
   return (
     <nav className="navbar">
-      <img className="navbar__icon" src={tie} />
       <img
         className="navbar__toggle"
         src={menu}
         onClick={() => setToggle(!toggle)}
       />
-      <ul className={toggle ? "list list-open" : "list"}>
-        <li className="list__item">Profile</li>
-        <li className="list__item">Internship</li>
-        <li className="list__item">Explore</li>
+      <ul
+        className={
+          toggle ? "navbar__items navbar__items-open" : "navbar__items"
+        }
+      >
+        <li className="navbar__item">Profile</li>
+        <li className="navbar__item">Explore</li>
+        <li className="navbar__item">Create</li>
         <li
-          className="list__item list__item-logout"
+          className="navbar__item navbar__item-logout"
           onClick={() => handleLogout()}
         >
           Logout
