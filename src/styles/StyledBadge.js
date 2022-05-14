@@ -7,10 +7,16 @@ const StyledBadge = styled.span`
   padding: 0.2rem 1rem;
   font-size: 0.9rem;
   margin-top: 0.2rem;
+  background-color: black;
   ${(props) =>
-    props.backgroundColor &&
+    props.status === "Approved" &&
     css`
-      background-color: ${props.backgroundColor};
+      background-color: #64cc6f;
+    `};
+  ${(props) =>
+    props.status === "Pending" &&
+    css`
+      background-color: #f29100;
     `};
 `;
 
