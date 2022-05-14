@@ -1,11 +1,12 @@
 import profile from "../profile.jpg";
 import edit from "../edit.svg";
 import StyledBadge from "../styles/StyledBadge";
+import StyledButton from "../styles/StyledButton";
 
 const Dashboard = () => {
   return (
-    <section className="dashboard">
-      <figure className="profile">
+    <main className="dashboard">
+      <section className="profile">
         <div className="profile__crop">
           <img className="profile__img" src={profile} />
         </div>
@@ -13,21 +14,28 @@ const Dashboard = () => {
         <h2>Dr. Stephen Brule</h2>
         <h3>Internship Coordinator</h3>
         <h4>Longwood University</h4>
-      </figure>
+      </section>
+      <StyledButton
+        type="button"
+        backgroundColor={"#64CC6F"}
+        value="CREATE INTERNSHIP"
+      />
       <hr />
-      <ul className="internships">
-        <li className="internships__item">
-          <h3>Assistant Developer</h3>
-          <h4>Longwood University</h4>
-          <StyledBadge backgroundColor={"#64CC6F"}>Approved</StyledBadge>
-        </li>
-        <li className="internships__item">
-          <h3>Assistant Engineer</h3>
-          <h4>Longwood University</h4>
-          <StyledBadge backgroundColor={"#F29100"}>Pending</StyledBadge>
-        </li>
-      </ul>
-    </section>
+      <section className="internship">
+        <ul className="internships__list">
+          <li className="internships__item">
+            <h3>Assistant Developer</h3>
+            <h4>Longwood University</h4>
+            <StyledBadge backgroundColor={"#64CC6F"}>Approved</StyledBadge>
+          </li>
+          <li className="internships__item">
+            <h3>Assistant Engineer</h3>
+            <h4>Longwood University</h4>
+            <StyledBadge backgroundColor={"#F29100"}>Pending</StyledBadge>
+          </li>
+        </ul>
+      </section>
+    </main>
   );
 };
 

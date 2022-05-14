@@ -67,7 +67,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 1rem;
+  padding: 0.5rem;
   width: 100%;
   background-color: var(--primary-color);
   border-top: solid 2px var(--secondary-color);
@@ -113,8 +113,8 @@
 }
 
 .profile__crop {
-  width: 10rem;
-  height: 10rem;
+  width: 8rem;
+  height: 8rem;
   overflow: hidden;
   border-radius: 50%;
   margin: 0.5rem 0;
@@ -125,7 +125,7 @@
 
 .profile__edit {
   width: 1.5rem;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
 }
 
 .internships__item {

@@ -22,9 +22,8 @@ const Navigation = (props) => {
           toggle ? "navbar__items navbar__items-open" : "navbar__items"
         }
       >
-        <li className="navbar__item">Profile</li>
+        <li className="navbar__item">Home</li>
         <li className="navbar__item">Explore</li>
-        <li className="navbar__item">Create</li>
         <li
           className="navbar__item navbar__item-logout"
           onClick={() => handleLogout()}
