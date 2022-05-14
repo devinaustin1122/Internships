@@ -3,6 +3,17 @@ import edit from "../edit.svg";
 import StyledBadge from "../styles/StyledBadge";
 import StyledButton from "../styles/StyledButton";
 
+const internships = [
+  { title: "Assistant Developer", organization: "Longwood University" },
+  { title: "Engineers Assistant", organization: "Longwood University" },
+  { title: "Mail Room Coordinator", organization: "Longwood University" },
+];
+const user = {
+  name: "Devin Dyer",
+  organization: "Longwood University",
+  title: "Internship Coordinator",
+};
+
 const Dashboard = () => {
   return (
     <main className="dashboard">
