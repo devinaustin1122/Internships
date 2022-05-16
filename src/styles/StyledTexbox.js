@@ -9,15 +9,16 @@ const StyledTextbox = styled.input`
   padding: 1rem 1.5rem;
   margin: 0.8rem 0;
   width: 100%;
+  color: #757575;
   ${(props) =>
     props.invalid &&
     css`
-      background-color: #efc8cf;
-      border: solid 1px #efc8cf;
+      background-color: #f6e8e4;
+      border: solid 1px #f6e8e4;
     `}
 
   &:focus {
-    color: black;
+    color: #757575;
   }
 `;
 

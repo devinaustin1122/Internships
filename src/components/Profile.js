@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import profile from "../profile.jpg";
+import profile from "../profile.jpeg";
 import edit from "../edit.svg";
 import StyledBadge from "../styles/StyledBadge";
 import StyledButton from "../styles/StyledButton";
@@ -46,11 +46,7 @@ const Profile = () => {
         <h3>{user.organization}</h3>
         <h4>{user.title}</h4>
         <Link to={"/profile/edit"}>
-          <img
-            className="profile__edit"
-            src={edit}
-            onClick={() => handleEdit()}
-          />
+          <img className="profile__edit" src={edit} onClick={handleEdit} />
         </Link>
       </section>
       <section className="internship">

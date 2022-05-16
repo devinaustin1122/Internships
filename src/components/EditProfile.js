@@ -1,18 +1,47 @@
-import profile from "../profile.jpg";
+import { useState } from "react";
+import profile from "../profile.jpeg";
 import StyledButton from "../styles/StyledButton";
 import StyledTextbox from "../styles/StyledTexbox";
 
 const EditProfile = (props) => {
+  const [input, setInput] = useState({
+    name: props.user.name,
+    organization: props.user.organization,
+    title: props.user.title,
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(input);
+  };
+
   return (
-    <form className="profile-edit form">
+    <section className="profile">
       <div className="profile__crop">
         <img className="profile__img" src={profile} />
       </div>
-      <StyledTextbox value={props.user.name} type="text" required />
-      <StyledTextbox value={props.user.organization} type="text" required />
-      <StyledTextbox value={props.user.title} type="text" required />
-      <StyledButton value="SAVE" type={"submit"} />
-    </form>
+      <form className="form" onSubmit={handleSubmit}>
+        <StyledTextbox
+          value={input.name}
+          onChange={(e) => setInput({ ...input, name: e.target.value })}
+          type="text"
+          required
+        />
+        <StyledTextbox
+          value={input.organization}
+          onChange={(e) => setInput({ ...input, organization: e.target.value })}
+          type="text"
+          required
+        />
+        <StyledTextbox
+          value={input.title}
+          onChange={(e) => setInput({ ...input, title: e.target.value })}
+          type="text"
+          required
+        />
+        <StyledButton value="SAVE" type={"submit"} />
+      </form>
+    </section>
   );
 };
 

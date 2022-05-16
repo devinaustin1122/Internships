@@ -114,13 +114,6 @@
   padding: 1rem;
   text-align: center;
   background-color: #f3f3f3;
-  padding: 3rem;
-}
-
-.profile-edit {
-  background-color: #f3f3f3;
-  align-items: center;
-  padding: 3rem 1rem;
 }
 
 .profile__crop {
@@ -128,15 +121,12 @@
   height: 8rem;
   overflow: hidden;
   border-radius: 50%;
-  margin-bottom: 0.5rem;
-}
-
-.profile__img {
+  margin: 2rem 0;
 }
 
 .profile__edit {
   width: 1.5rem;
-  margin: 0.5rem 0;
+  margin: 1rem 0;
 }
 
 .internships__item {
