@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import profile from "../profile.jpeg";
-import edit from "../edit.svg";
+import profile from "../images/profile.jpeg";
+import edit from "../images/edit.svg";
 import StyledBadge from "../styles/StyledBadge";
 import StyledButton from "../styles/StyledButton";
 

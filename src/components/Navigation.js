@@ -1,5 +1,5 @@
 import { useState } from "react";
-import menu from "../menu.svg";
+import menu from "../images/menu.svg";
 import { Link } from "react-router-dom";
 
 const Navigation = (props) => {
