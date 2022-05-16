@@ -1,10 +1,17 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
-import Dashboard from "./components/Dashboard";
+import Profile from "./components/Profile";
 import Navigation from "./components/Navigation";
 import EditProfile from "./components/EditProfile";
 import "./App.css";
+
+const dummy = {
+  id: "db3995d64344242e877f9f24f320c099a858868e",
+  name: "Devin Dyer",
+  organization: "Longwood University",
+  title: "Internship Coordinator",
+};
 
 const App = () => {
   const [user, setUser] = useState({
@@ -21,11 +28,14 @@ const App = () => {
         {!user.token && <Login setUser={setUser} />}
         {user.token && (
           <div className="container-flex-col">
-            <div className="pb-4">
+            <div className="pb-5">
               <Navigation setUser={setUser} />
               <Routes>
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/profile/edit" element={<EditProfile />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route
+                  path="/profile/edit"
+                  element={<EditProfile user={dummy} />}
+                />
               </Routes>
             </div>
           </div>

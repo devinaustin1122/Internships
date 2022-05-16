@@ -23,7 +23,7 @@ const Login = (props) => {
       })
       .then(({ data }) => {
         props.setUser(data);
-        navigate("/dashboard");
+        navigate("/profile");
       })
       .catch((err) => console.log(err));
   };

@@ -31,7 +31,7 @@ const user = {
   title: "Internship Coordinator",
 };
 
-const Dashboard = () => {
+const Profile = () => {
   const handleEdit = () => {
     console.log("handle edit");
   };
@@ -42,6 +42,9 @@ const Dashboard = () => {
         <div className="profile__crop">
           <img className="profile__img" src={profile} />
         </div>
+        <h2>{user.name}</h2>
+        <h3>{user.organization}</h3>
+        <h4>{user.title}</h4>
         <Link to={"/profile/edit"}>
           <img
             className="profile__edit"
@@ -49,16 +52,13 @@ const Dashboard = () => {
             onClick={() => handleEdit()}
           />
         </Link>
-        <h2>{user.name}</h2>
-        <h3>{user.organization}</h3>
-        <h4>{user.title}</h4>
       </section>
-      <StyledButton
-        type="button"
-        backgroundColor={"#64CC6F"}
-        value="CREATE INTERNSHIP"
-      />
       <section className="internship">
+        <StyledButton
+          type="button"
+          backgroundColor={"#64CC6F"}
+          value="CREATE INTERNSHIP"
+        />
         <ul className="internships__list">
           {internships.map((internship) => {
             return (
@@ -77,4 +77,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Profile;

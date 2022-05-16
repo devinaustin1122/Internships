@@ -22,11 +22,11 @@ const Navigation = (props) => {
           toggle ? "navbar__items navbar__items-open" : "navbar__items"
         }
       >
-        <Link to="/dashboard">
-          <li className="navbar__item">Home</li>
-        </Link>
-        <Link to="/dashboard">
+        <Link to="/explore">
           <li className="navbar__item">Explore</li>
+        </Link>
+        <Link to="/profile">
+          <li className="navbar__item">Profile</li>
         </Link>
         <li
           className="navbar__item navbar__item-logout"

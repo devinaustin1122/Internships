@@ -13,7 +13,8 @@ html {
   font-size: 14px;
 }
 
-section {
+section,
+form {
   padding: 1em;
 }
 
