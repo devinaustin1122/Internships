@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter } from "react-router-dom";
-import Login from "./containers/Login";
-import Dashboard from "./containers/Dashboard";
-import Navigation from "./containers/Navigation";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
+import Navigation from "./components/Navigation";
+import EditProfile from "./components/EditProfile";
 import "./App.css";
 
-function App() {
+const App = () => {
   const [user, setUser] = useState({
     token: window.localStorage.getItem("token"),
   });
@@ -20,13 +21,18 @@ function App() {
         {!user.token && <Login setUser={setUser} />}
         {user.token && (
           <div className="container-flex-col">
-            <Navigation setUser={setUser} />
-            <Dashboard />
+            <div className="pb-4">
+              <Navigation setUser={setUser} />
+              <Routes>
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/profile/edit" element={<EditProfile />} />
+              </Routes>
+            </div>
           </div>
         )}
       </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

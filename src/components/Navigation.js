@@ -1,6 +1,6 @@
 import { useState } from "react";
 import menu from "../menu.svg";
-import tie from "../tie.svg";
+import { Link } from "react-router-dom";
 
 const Navigation = (props) => {
   const [toggle, setToggle] = useState(false);
@@ -22,8 +22,12 @@ const Navigation = (props) => {
           toggle ? "navbar__items navbar__items-open" : "navbar__items"
         }
       >
-        <li className="navbar__item">Home</li>
-        <li className="navbar__item">Explore</li>
+        <Link to="/dashboard">
+          <li className="navbar__item">Home</li>
+        </Link>
+        <Link to="/dashboard">
+          <li className="navbar__item">Explore</li>
+        </Link>
         <li
           className="navbar__item navbar__item-logout"
           onClick={() => handleLogout()}

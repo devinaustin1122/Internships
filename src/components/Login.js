@@ -5,7 +5,7 @@ import StyledTextbox from "../styles/StyledTexbox";
 import StyledButton from "../styles/StyledButton";
 import logo from "../logo.svg";
 
-function Login(props) {
+const Login = (props) => {
   let navigate = useNavigate();
 
   const [input, setInput] = useState({
@@ -21,7 +21,10 @@ function Login(props) {
         username: input.username,
         password: input.password,
       })
-      .then(({ data }) => props.setUser(data))
+      .then(({ data }) => {
+        props.setUser(data);
+        navigate("/dashboard");
+      })
       .catch((err) => console.log(err));
   };
 
@@ -32,7 +35,7 @@ function Login(props) {
         username: input.username,
         password: input.password,
       });
-      navigate("/home");
+      navigate("/login");
     }
   };
 
@@ -140,6 +143,6 @@ function Login(props) {
       </div>
     </section>
   );
-}
+};
 
 export default Login;

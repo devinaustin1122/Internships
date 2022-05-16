@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import profile from "../profile.jpg";
 import edit from "../edit.svg";
 import StyledBadge from "../styles/StyledBadge";
@@ -31,13 +32,23 @@ const user = {
 };
 
 const Dashboard = () => {
+  const handleEdit = () => {
+    console.log("handle edit");
+  };
+
   return (
     <main className="dashboard">
       <section className="profile">
         <div className="profile__crop">
           <img className="profile__img" src={profile} />
         </div>
-        <img className="profile__edit" src={edit} />
+        <Link to={"/profile/edit"}>
+          <img
+            className="profile__edit"
+            src={edit}
+            onClick={() => handleEdit()}
+          />
+        </Link>
         <h2>{user.name}</h2>
         <h3>{user.organization}</h3>
         <h4>{user.title}</h4>
