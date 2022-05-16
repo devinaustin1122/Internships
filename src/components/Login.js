@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Routes, Route, Navigate, Link, useNavigate } from "react-router-dom";
 import StyledTextbox from "../styles/StyledTexbox";
 import StyledButton from "../styles/StyledButton";
-import logo from "../logo.svg";
+import logo from "../tie.svg";
 
 const Login = (props) => {
   let navigate = useNavigate();

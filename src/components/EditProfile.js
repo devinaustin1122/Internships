@@ -15,11 +15,17 @@ const EditProfile = (props) => {
     console.log(input);
   };
 
+  const handleSelect = (e) => {
+    e.preventDefault();
+    console.log("handle select");
+  };
+
   return (
     <section className="profile">
       <div className="profile__crop">
         <img className="profile__img" src={profile} />
       </div>
+      <a onClick={handleSelect}>edit profile picture</a>
       <form className="form" onSubmit={handleSubmit}>
         <StyledTextbox
           value={input.name}

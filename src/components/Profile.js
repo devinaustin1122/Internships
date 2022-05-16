@@ -32,10 +32,6 @@ const user = {
 };
 
 const Profile = () => {
-  const handleEdit = () => {
-    console.log("handle edit");
-  };
-
   return (
     <main className="dashboard">
       <section className="profile">
@@ -46,15 +42,11 @@ const Profile = () => {
         <h3>{user.organization}</h3>
         <h4>{user.title}</h4>
         <Link to={"/profile/edit"}>
-          <img className="profile__edit" src={edit} onClick={handleEdit} />
+          <img className="profile__edit" src={edit} />
         </Link>
       </section>
       <section className="internship">
-        <StyledButton
-          type="button"
-          backgroundColor={"#64CC6F"}
-          value="CREATE INTERNSHIP"
-        />
+        <StyledButton type="button" value="CREATE INTERNSHIP" />
         <ul className="internships__list">
           {internships.map((internship) => {
             return (
