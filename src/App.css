@@ -3,7 +3,7 @@
   --primary-text-color: white;
   --secondary-color: #004280;
   --secondary-text-color: white;
-  --accent-color: #96ccff;
+  --accent-color: #ff9e00;
   --accent-text-color: white;
 }
 
@@ -35,12 +35,11 @@
 
 .login {
   background-color: #f3f3f3;
-
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .login__container {

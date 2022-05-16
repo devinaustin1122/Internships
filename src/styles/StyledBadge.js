@@ -16,7 +16,7 @@ const StyledBadge = styled.span`
   ${(props) =>
     props.status === "Pending" &&
     css`
-      background-color: #f29100;
+      background-color: var(--accent-color);
     `};
 `;
 

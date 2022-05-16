@@ -25,7 +25,7 @@ const EditProfile = (props) => {
       <div className="profile__crop">
         <img className="profile__img" src={profile} />
       </div>
-      <a onClick={handleSelect}>edit profile picture</a>
+      <a onClick={handleSelect}>select profile picture</a>
       <form className="form" onSubmit={handleSubmit}>
         <StyledTextbox
           value={input.name}
