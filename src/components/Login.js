@@ -75,7 +75,7 @@ const Login = (props) => {
                 <Link to={"/account/recover"}>forgot your password?</Link>
                 <Link to={"/account/create"}>
                   <StyledButton
-                    backgroundColor={"#64CC6F"}
+                    backgroundColor={"var(--success-color)"}
                     type="button"
                     value="CREATE AN ACCOUNT"
                   />

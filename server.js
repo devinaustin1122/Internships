@@ -33,6 +33,10 @@ app.post("/users/create", async function (req, res) {
   res.end();
 });
 
+app.post("/profile/edit", function (req, res) {});
+
+app.post("/profile", function (req, res) {});
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });

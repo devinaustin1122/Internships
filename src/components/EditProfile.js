@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import profile from "../profile.jpeg";
+import back from "../back.svg";
 import StyledButton from "../styles/StyledButton";
 import StyledTextbox from "../styles/StyledTexbox";
 
@@ -22,6 +24,9 @@ const EditProfile = (props) => {
 
   return (
     <section className="profile">
+      <Link className="back" to="/profile">
+        <img src={back} />
+      </Link>
       <div className="profile__crop">
         <img className="profile__img" src={profile} />
       </div>
