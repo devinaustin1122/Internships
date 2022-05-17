@@ -24,23 +24,17 @@ const internships = [
     status: "Pending",
   },
 ];
-const user = {
-  id: "db3995d64344242e877f9f24f320c099a858868e",
-  name: "Devin Dyer",
-  organization: "Longwood University",
-  title: "Internship Coordinator",
-};
 
-const Profile = () => {
+const Profile = (props) => {
   return (
     <main className="dashboard">
       <section className="profile">
         <div className="profile__crop">
           <img className="profile__img" src={profile} />
         </div>
-        <h2>{user.name}</h2>
-        <h3>{user.organization}</h3>
-        <h4>{user.title}</h4>
+        <h3>{props.user.username}</h3>
+        <h3>{props.user.organization}</h3>
+        <h4>{props.user.title}</h4>
         <Link to={"/profile/edit"}>
           <svg
             className="profile__edit"

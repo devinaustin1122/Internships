@@ -6,7 +6,7 @@ import StyledTextbox from "../styles/StyledTexbox";
 
 const EditProfile = (props) => {
   const [input, setInput] = useState({
-    name: props.user.name,
+    username: props.user.username,
     organization: props.user.organization,
     title: props.user.title,
   });
@@ -40,20 +40,23 @@ const EditProfile = (props) => {
       <a onClick={handleSelect}>select profile picture</a>
       <form className="form" onSubmit={handleSubmit}>
         <StyledTextbox
-          value={input.name}
-          onChange={(e) => setInput({ ...input, name: e.target.value })}
+          value={input.username}
+          onChange={(e) => setInput({ ...input, username: e.target.value })}
+          placeholder="USERNAME"
           type="text"
           required
         />
         <StyledTextbox
           value={input.organization}
           onChange={(e) => setInput({ ...input, organization: e.target.value })}
+          placeholder="ORGANIZATION"
           type="text"
           required
         />
         <StyledTextbox
           value={input.title}
           onChange={(e) => setInput({ ...input, title: e.target.value })}
+          placeholder="TITLE"
           type="text"
           required
         />

@@ -15,11 +15,12 @@ const dummy = {
 
 const App = () => {
   const [user, setUser] = useState({
-    token: window.localStorage.getItem("token"),
+    ...window.localStorage,
   });
 
   useEffect(() => {
     window.localStorage.setItem("token", user.token);
+    console.log(user);
   }, [user.token]);
 
   return (
@@ -30,10 +31,10 @@ const App = () => {
           <div className="app__container">
             <Navigation setUser={setUser} />
             <Routes>
-              <Route path="/profile" element={<Profile />} />
+              <Route path="/profile" element={<Profile user={user} />} />
               <Route
                 path="/profile/edit"
-                element={<EditProfile user={dummy} />}
+                element={<EditProfile user={user} />}
               />
             </Routes>
           </div>

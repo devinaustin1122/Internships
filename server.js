@@ -17,7 +17,8 @@ app.post("/accounts/authenticate", async function (req, res) {
     .then((result) => {
       if (result) {
         res.json({
-          token: jwt.sign({ foo: "bar" }, "shhhhh"),
+          token: jwt.sign({ user: req.body.username }, "shhhhh"),
+          username: req.body.username,
         });
       } else {
         res.sendStatus(401);
