@@ -12,11 +12,16 @@ const Navigation = (props) => {
 
   return (
     <nav className="navbar">
-      <img
+      <svg
         className="navbar__toggle"
-        src={menu}
-        onClick={() => setToggle(!toggle)}
-      />
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M6 36H42V32H6V36ZM6 26H42V22H6V26ZM6 12V16H42V12H6Z" />
+      </svg>
       <ul
         className={
           toggle ? "navbar__items navbar__items-open" : "navbar__items"

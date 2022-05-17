@@ -24,19 +24,13 @@ hr {
   border-bottom: solid 1px #e2e2e2;
 }
 
-html,
-body {
-  width: 100vw;
-  height: 100vh;
-}
-
 img {
   max-width: 100%;
 }
 
 a {
   font-size: 0.9rem;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   margin: 0.5rem 0;
   text-decoration: none;
 }

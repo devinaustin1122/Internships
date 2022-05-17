@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #0085ff;
+  --primary-color: #f3f3f3;
   --secondary-color: #004280;
   --accent-color: #ff9e00;
   --success-color: #64cc6f;
@@ -16,18 +16,10 @@
   justify-content: center;
 }
 
-.container-flex {
-  display: flex;
-  width: 100%;
-}
-
-.container-flex-col {
+.app__container {
   display: flex;
   flex-direction: column;
   width: 100%;
-}
-
-.pb-5 {
   padding-bottom: 5rem;
 }
 
@@ -37,7 +29,8 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  color: var(--primary-color);
+  height: 100vh;
+  color: var(--secondary-color);
 }
 
 .login__container {
@@ -54,6 +47,7 @@
 
 .login__logo {
   width: 0.5rem;
+  fill: var(--secondary-color);
 }
 
 .form {
@@ -79,6 +73,8 @@
 
 .navbar__toggle {
   width: 3rem;
+  height: 3rem;
+  fill: var(--secondary-color);
 }
 
 .navbar__items {
@@ -126,7 +122,9 @@
 
 .profile__edit {
   width: 1.5rem;
+  height: 1.5rem;
   margin: 1rem 0;
+  fill: var(--secondary-color);
 }
 
 .internships__item {
@@ -142,7 +140,10 @@
   position: absolute;
   left: 0;
   margin: 2rem;
-  width: 1.5rem;
 }
 
-/* may want to switch padding to margin on a few classes for absolute positioned elements */
+.back__img {
+  fill: var(--secondary-color);
+  width: 1.5rem;
+  height: 1.5rem;
+}

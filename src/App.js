@@ -27,20 +27,19 @@ const App = () => {
       <BrowserRouter>
         {!user.token && <Login setUser={setUser} />}
         {user.token && (
-          <div className="container-flex-col">
-            <div className="pb-5">
-              <Navigation setUser={setUser} />
-              <Routes>
-                <Route path="/profile" element={<Profile />} />
-                <Route
-                  path="/profile/edit"
-                  element={<EditProfile user={dummy} />}
-                />
-              </Routes>
-            </div>
+          <div className="app__container">
+            <Navigation setUser={setUser} />
+            <Routes>
+              <Route path="/profile" element={<Profile />} />
+              <Route
+                path="/profile/edit"
+                element={<EditProfile user={dummy} />}
+              />
+            </Routes>
           </div>
         )}
       </BrowserRouter>
+      <footer className="app__footer"></footer>
     </div>
   );
 };

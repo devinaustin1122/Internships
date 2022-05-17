@@ -42,7 +42,15 @@ const Profile = () => {
         <h3>{user.organization}</h3>
         <h4>{user.title}</h4>
         <Link to={"/profile/edit"}>
-          <img className="profile__edit" src={edit} />
+          <svg
+            className="profile__edit"
+            width="96"
+            height="96"
+            viewBox="0 0 96 96"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M12 69V84H27L71.24 39.76L56.24 24.76L12 69ZM82.84 28.16C84.4 26.6 84.4 24.08 82.84 22.52L73.48 13.16C71.92 11.6 69.4 11.6 67.84 13.16L60.52 20.48L75.52 35.48L82.84 28.16V28.16Z" />
+          </svg>
         </Link>
       </section>
       <section className="internship">

@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 const StyledButton = styled.input`
   width: 100%;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   border: none;
   color: white;
   font-weight: 500;
