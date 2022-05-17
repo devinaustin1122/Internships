@@ -47,7 +47,7 @@ const Profile = (props) => {
           </svg>
         </Link>
       </section>
-      <section className="internship">
+      <section className="internships">
         <StyledButton type="button" value="CREATE INTERNSHIP" />
         <ul className="internships__list">
           {internships.map((internship) => {
