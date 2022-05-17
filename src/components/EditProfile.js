@@ -7,6 +7,7 @@ import StyledTextbox from "../styles/StyledTexbox";
 const EditProfile = (props) => {
   const [input, setInput] = useState({
     username: props.user.username,
+    name: props.user.name,
     organization: props.user.organization,
     title: props.user.title,
   });
@@ -37,12 +38,13 @@ const EditProfile = (props) => {
       <div className="profile__crop">
         <img className="profile__img" src={profile} />
       </div>
-      <a onClick={handleSelect}>select profile picture</a>
+      <h3>{props.user.username}</h3>
+      <a onClick={handleSelect}>upload profile picture</a>
       <form className="form" onSubmit={handleSubmit}>
         <StyledTextbox
-          value={input.username}
-          onChange={(e) => setInput({ ...input, username: e.target.value })}
-          placeholder="USERNAME"
+          value={input.name}
+          onChange={(e) => setInput({ ...input, name: e.target.value })}
+          placeholder="FULL NAME"
           type="text"
           required
         />
