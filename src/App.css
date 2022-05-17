@@ -1,7 +1,10 @@
 :root {
   --primary-color: #f3f3f3;
+  --primary-text-color: black;
   --secondary-color: #004280;
+  --secondary-text-color: white;
   --accent-color: #ff9e00;
+  --accent-text-color: white;
   --success-color: #64cc6f;
 }
 
@@ -24,7 +27,6 @@
 }
 
 .login {
-  background-color: #f3f3f3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,7 +68,8 @@
   padding: 1rem;
   width: 100%;
   z-index: 1;
-  background-color: rgb(243, 243, 243);
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 5px;
 }
@@ -94,12 +97,12 @@
   justify-content: end;
   font-size: 1.2rem;
   font-weight: 500;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   padding: 0.5rem;
 }
 
 .navbar__item-logout {
-  color: var(--secondary-color);
+  color: var(--accent-color);
 }
 
 .profile {
@@ -107,15 +110,15 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  padding: 1rem;
   text-align: center;
-  background-color: #f3f3f3;
 }
 
 .profile__crop {
   width: 8rem;
   height: 8rem;
   overflow: hidden;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   border-radius: 50%;
   margin: 2rem 0;
 }
@@ -128,12 +131,11 @@
 }
 
 .internships__item {
-  background-color: #f3f3f3;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   padding: 1rem;
   border-left: solid 1rem var(--primary-color);
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 
 .back {

@@ -9,8 +9,9 @@ app.use(cors());
 app.use(express.json());
 
 let users = [];
+let profiles = [];
 
-app.post("/users/authenticate", async function (req, res) {
+app.post("/accounts/authenticate", async function (req, res) {
   bcrypt
     .compare(req.body.password, users[req.body.username])
     .then((result) => {
@@ -27,7 +28,7 @@ app.post("/users/authenticate", async function (req, res) {
     });
 });
 
-app.post("/users/create", async function (req, res) {
+app.post("/accounts/create", async function (req, res) {
   const hash = await bcrypt.hash(req.body.password, 8);
   users[req.body.username] = hash;
   res.end();

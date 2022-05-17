@@ -14,6 +14,7 @@ const Navigation = (props) => {
     <nav className="navbar">
       <svg
         className="navbar__toggle"
+        onClick={() => setToggle(!toggle)}
         width="48"
         height="48"
         viewBox="0 0 48 48"

@@ -17,7 +17,7 @@ const Login = (props) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/users/authenticate", {
+      .post("http://localhost:3001/accounts/authenticate", {
         username: input.username,
         password: input.password,
       })
@@ -31,7 +31,7 @@ const Login = (props) => {
   const handleCreate = async (e) => {
     e.preventDefault();
     if (input.password === input.confirm) {
-      await axios.post("http://localhost:3001/users/create", {
+      await axios.post("http://localhost:3001/accounts/create", {
         username: input.username,
         password: input.password,
       });

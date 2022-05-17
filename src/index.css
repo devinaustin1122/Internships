@@ -15,7 +15,7 @@ html {
 
 section,
 form {
-  padding: 1em;
+  padding: 1rem;
 }
 
 hr {
@@ -30,7 +30,7 @@ img {
 
 a {
   font-size: 0.9rem;
-  color: var(--secondary-color);
+  color: var(--accent-color);
   margin: 0.5rem 0;
   text-decoration: none;
 }
