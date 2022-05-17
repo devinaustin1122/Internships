@@ -6,13 +6,6 @@ import Navigation from "./components/Navigation";
 import EditProfile from "./components/EditProfile";
 import "./App.css";
 
-const dummy = {
-  id: "db3995d64344242e877f9f24f320c099a858868e",
-  name: "Devin Dyer",
-  organization: "Longwood University",
-  title: "Internship Coordinator",
-};
-
 const App = () => {
   const [user, setUser] = useState({
     ...window.localStorage,

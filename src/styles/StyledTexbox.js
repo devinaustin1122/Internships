@@ -18,7 +18,8 @@ const StyledTextbox = styled.input`
     `}
 
   &:focus {
-    color: #757575;
+    outline: none !important;
+    border: 2px solid var(--secondary-color);
   }
 `;
 

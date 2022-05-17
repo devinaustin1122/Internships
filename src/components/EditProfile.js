@@ -1,12 +1,14 @@
+import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import profile from "../images/profile.jpeg";
 import StyledButton from "../styles/StyledButton";
 import StyledTextbox from "../styles/StyledTexbox";
 
 const EditProfile = (props) => {
+  let navigate = useNavigate();
+
   const [input, setInput] = useState({
-    username: props.user.username,
     name: props.user.name,
     organization: props.user.organization,
     title: props.user.title,
@@ -14,7 +16,16 @@ const EditProfile = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(input);
+    axios
+      .post("http://localhost:3001/profiles/edit", {
+        ...input,
+        token: props.user.token,
+      })
+      .then(({ data }) => {
+        props.setUser(data);
+        navigate("/profile");
+      })
+      .catch((err) => console.log(err));
   };
 
   const handleSelect = (e) => {

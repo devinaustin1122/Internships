@@ -17,7 +17,7 @@ app.post("/accounts/authenticate", async function (req, res) {
     .then((result) => {
       if (result) {
         res.json({
-          token: jwt.sign({ user: req.body.username }, "shhhhh"),
+          token: jwt.sign({ username: req.body.username }, "shhhhh"),
           username: req.body.username,
         });
       } else {
@@ -35,9 +35,19 @@ app.post("/accounts/create", async function (req, res) {
   res.end();
 });
 
-app.post("/profile/edit", function (req, res) {});
+app.post("/profiles/edit", function (req, res) {
+  jwt.verify(req.body.token, "shhhhh", function (err, decoded) {
+    console.log(decoded.username);
+    profiles[decoded.username] = req.body;
+  });
+  profiles["yo"] = "yoooooo";
+  console.log("users");
+  console.log(users);
+  console.log("profiles");
+  console.log(profiles);
+});
 
-app.post("/profile", function (req, res) {});
+app.get("/profiles", function (req, res) {});
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
