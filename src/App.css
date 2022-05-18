@@ -20,6 +20,10 @@
 }
 
 .app__container {
+  width: 100%;
+}
+
+.app__content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,6 +119,13 @@
   width: 100%;
 }
 
+.profile-edit {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
 .profile__crop {
   width: 8rem;
   height: 8rem;
@@ -155,15 +166,35 @@
   height: 1.5rem;
 }
 
-@media screen and (min-width: 1000px) {
-  .app__container {
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
+.link {
+  color: var(--accent-color);
+  margin: 0.5rem 0;
+}
+
+@media screen and (min-width: 750px) {
+  .app {
+    padding-bottom: 5rem;
   }
 
-  .profile {
+  .app__container {
     flex-direction: row;
-    align-items: flex-start;
+  }
+
+  .navbar {
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .navbar__toggle {
+    display: none;
+  }
+
+  .navbar__items {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 40rem;
+    height: auto;
   }
 }

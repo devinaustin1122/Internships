@@ -23,13 +23,15 @@ const App = () => {
         {user.token && (
           <div className="app__container">
             <Navigation setUser={setUser} />
-            <Routes>
-              <Route path="/profile" element={<Profile user={user} />} />
-              <Route
-                path="/profile/edit"
-                element={<EditProfile user={user} />}
-              />
-            </Routes>
+            <div className="app__content">
+              <Routes>
+                <Route path="/profile" element={<Profile user={user} />} />
+                <Route
+                  path="/profile/edit"
+                  element={<EditProfile user={user} />}
+                />
+              </Routes>
+            </div>
           </div>
         )}
       </BrowserRouter>

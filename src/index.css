@@ -30,8 +30,6 @@ img {
 
 a {
   font-size: 0.9rem;
-  color: var(--accent-color);
-  margin: 0.5rem 0;
   text-decoration: none;
 }
 

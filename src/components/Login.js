@@ -83,7 +83,9 @@ const Login = (props) => {
                   required
                 />
                 <StyledButton value="LOGIN" type="submit" />
-                <Link to={"/account/recover"}>forgot your password?</Link>
+                <Link className="link" to={"/account/recover"}>
+                  forgot your password?
+                </Link>
                 <Link to={"/account/create"}>
                   <StyledButton
                     backgroundColor={"var(--success-color)"}

@@ -9,9 +9,9 @@ const EditProfile = (props) => {
   let navigate = useNavigate();
 
   const [input, setInput] = useState({
-    name: props.user.name,
-    organization: props.user.organization,
-    title: props.user.title,
+    name: props.user.name || "",
+    organization: props.user.organization || "",
+    title: props.user.title || "",
   });
 
   const handleSubmit = (e) => {
@@ -34,23 +34,27 @@ const EditProfile = (props) => {
   };
 
   return (
-    <section className="profile">
-      <Link className="back" to="/profile">
-        <svg
-          className="back__img"
-          width="96"
-          height="96"
-          viewBox="0 0 96 96"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M46.68 15.48L39.6 8.40002L0 48L39.6 87.6L46.68 80.52L14.16 48L46.68 15.48Z" />
-        </svg>
-      </Link>
-      <div className="profile__crop">
-        <img className="profile__img" src={profile} />
+    <section className="profile-edit">
+      <div className="profile">
+        <Link className="back" to="/profile">
+          <svg
+            className="back__img"
+            width="96"
+            height="96"
+            viewBox="0 0 96 96"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M46.68 15.48L39.6 8.40002L0 48L39.6 87.6L46.68 80.52L14.16 48L46.68 15.48Z" />
+          </svg>
+        </Link>
+        <div className="profile__crop">
+          <img className="profile__img" src={profile} />
+        </div>
+        <h3>{props.user.email}</h3>
+        <a className="link" onClick={handleSelect}>
+          upload profile picture
+        </a>
       </div>
-      <h3>{props.user.email}</h3>
-      <a onClick={handleSelect}>upload profile picture</a>
       <form className="form" onSubmit={handleSubmit}>
         <StyledTextbox
           value={input.name}
