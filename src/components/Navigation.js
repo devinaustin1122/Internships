@@ -6,8 +6,7 @@ const Navigation = (props) => {
   const [toggle, setToggle] = useState(false);
 
   const handleLogout = () => {
-    props.setUser({ token: "" });
-    console.log("logout");
+    props.handleLogout();
   };
 
   return (

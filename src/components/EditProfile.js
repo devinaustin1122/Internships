@@ -8,21 +8,14 @@ import StyledTextbox from "../styles/StyledTexbox";
 const EditProfile = (props) => {
   let navigate = useNavigate();
 
-  const [input, setInput] = useState({
-    name: props.user.name || "",
-    organization: props.user.organization || "",
-    title: props.user.title || "",
-  });
-
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
       .post("http://localhost:3001/profiles/edit", {
-        ...input,
+        ...props.profile,
         token: props.user.token,
       })
-      .then(({ data }) => {
-        props.setUser(data);
+      .then(() => {
         navigate("/profile");
       })
       .catch((err) => console.log(err));
@@ -57,22 +50,28 @@ const EditProfile = (props) => {
       </div>
       <form className="form" onSubmit={handleSubmit}>
         <StyledTextbox
-          value={input.name}
-          onChange={(e) => setInput({ ...input, name: e.target.value })}
+          value={props.profile.name}
+          onChange={(e) =>
+            props.setProfile({ ...props.profile, name: e.target.value })
+          }
           placeholder="FULL NAME"
           type="text"
           required
         />
         <StyledTextbox
-          value={input.organization}
-          onChange={(e) => setInput({ ...input, organization: e.target.value })}
+          value={props.profile.organization}
+          onChange={(e) =>
+            props.setProfile({ ...props.profile, organization: e.target.value })
+          }
           placeholder="ORGANIZATION"
           type="text"
           required
         />
         <StyledTextbox
-          value={input.title}
-          onChange={(e) => setInput({ ...input, title: e.target.value })}
+          value={props.profile.title}
+          onChange={(e) =>
+            props.setProfile({ ...props.profile, title: e.target.value })
+          }
           placeholder="TITLE"
           type="text"
           required

@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
@@ -7,14 +8,23 @@ import EditProfile from "./components/EditProfile";
 import "./App.css";
 
 const App = () => {
-  const [user, setUser] = useState({
-    ...window.localStorage,
-  });
+  const [user, setUser] = useState(
+    JSON.parse(window.localStorage.getItem("user"))
+  );
+
+  const [profile, setProfile] = useState(
+    JSON.parse(window.localStorage.getItem("profile"))
+  );
+
+  const handleLogout = () => {
+    setUser({});
+    setProfile({});
+  };
 
   useEffect(() => {
-    window.localStorage.setItem("token", user.token);
-    console.log(user);
-  }, [user.token]);
+    window.localStorage.setItem("user", JSON.stringify(user));
+    window.localStorage.setItem("profile", JSON.stringify(profile));
+  }, [user, profile]);
 
   return (
     <div className="app">
@@ -22,13 +32,22 @@ const App = () => {
         {!user.token && <Login setUser={setUser} />}
         {user.token && (
           <div className="app__container">
-            <Navigation setUser={setUser} />
+            <Navigation handleLogout={handleLogout} />
             <div className="app__content">
               <Routes>
-                <Route path="/profile" element={<Profile user={user} />} />
+                <Route
+                  path="/profile"
+                  element={<Profile user={user} profile={profile} />}
+                />
                 <Route
                   path="/profile/edit"
-                  element={<EditProfile user={user} />}
+                  element={
+                    <EditProfile
+                      user={user}
+                      profile={profile}
+                      setProfile={setProfile}
+                    />
+                  }
                 />
               </Routes>
             </div>

@@ -37,17 +37,17 @@ app.post("/accounts/create", async function (req, res) {
 
 app.post("/profiles/edit", function (req, res) {
   jwt.verify(req.body.token, "shhhhh", function (err, decoded) {
-    console.log(decoded.email);
     profiles[decoded.email] = req.body;
   });
-  profiles["yo"] = "yoooooo";
-  console.log("users");
-  console.log(users);
-  console.log("profiles");
-  console.log(profiles);
+  res.end();
 });
 
-app.get("/profiles", function (req, res) {});
+app.get("/profiles/:email", function (req, res) {
+  console.log(req.params.email);
+  res.json({
+    ...profiles[req.params.email],
+  });
+});
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);

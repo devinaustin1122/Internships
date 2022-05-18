@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import profile from "../images/profile.jpeg";
-import edit from "../images/edit.svg";
 import StyledBadge from "../styles/StyledBadge";
 import StyledButton from "../styles/StyledButton";
 
@@ -32,9 +31,9 @@ const Profile = (props) => {
         <div className="profile__crop">
           <img className="profile__img" src={profile} />
         </div>
-        <h3>{props.user.email}</h3>
-        <h3>{props.user.organization}</h3>
-        <h4>{props.user.title}</h4>
+        <h2>{props.profile.name}</h2>
+        <h3>{props.profile.organization}</h3>
+        <h4>{props.profile.title}</h4>
         <Link to={"/profile/edit"}>
           <svg
             className="profile__edit"
