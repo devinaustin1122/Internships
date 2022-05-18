@@ -22,6 +22,7 @@
 .app__container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   padding-bottom: 5rem;
 }
@@ -105,12 +106,6 @@
   color: var(--accent-color);
 }
 
-.dashboard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .profile {
   display: flex;
   flex-direction: column;
@@ -158,4 +153,17 @@
   fill: var(--secondary-color);
   width: 1.5rem;
   height: 1.5rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .app__container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .profile {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 }

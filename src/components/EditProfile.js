@@ -49,7 +49,7 @@ const EditProfile = (props) => {
       <div className="profile__crop">
         <img className="profile__img" src={profile} />
       </div>
-      <h3>{props.user.username}</h3>
+      <h3>{props.user.email}</h3>
       <a onClick={handleSelect}>upload profile picture</a>
       <form className="form" onSubmit={handleSubmit}>
         <StyledTextbox

@@ -9,7 +9,7 @@ const Login = (props) => {
   let navigate = useNavigate();
 
   const [input, setInput] = useState({
-    username: "",
+    email: "",
     password: "",
     confirm: "",
   });
@@ -18,7 +18,7 @@ const Login = (props) => {
     e.preventDefault();
     axios
       .post("http://localhost:3001/accounts/authenticate", {
-        username: input.username,
+        email: input.email,
         password: input.password,
       })
       .then(({ data }) => {
@@ -32,7 +32,7 @@ const Login = (props) => {
     e.preventDefault();
     if (input.password === input.confirm) {
       await axios.post("http://localhost:3001/accounts/create", {
-        username: input.username,
+        email: input.email,
         password: input.password,
       });
       navigate("/login");
@@ -65,11 +65,11 @@ const Login = (props) => {
             element={
               <form onSubmit={handleLogin} className="form">
                 <StyledTextbox
-                  value={input.username}
+                  value={input.email}
                   onChange={(e) =>
-                    setInput({ ...input, username: e.target.value })
+                    setInput({ ...input, email: e.target.value })
                   }
-                  placeholder="USERNAME"
+                  placeholder="EMAIL"
                   type="text"
                   required
                 />
@@ -99,11 +99,11 @@ const Login = (props) => {
             element={
               <form onSubmit={handleCreate} className="form">
                 <StyledTextbox
-                  value={input.username}
+                  value={input.email}
                   onChange={(e) => {
-                    setInput({ ...input, username: e.target.value });
+                    setInput({ ...input, email: e.target.value });
                   }}
-                  placeholder="USERNAME"
+                  placeholder="EMAIL"
                   type="text"
                   required
                 />
@@ -136,11 +136,11 @@ const Login = (props) => {
             element={
               <form onSubmit={handleRecover} className="form">
                 <StyledTextbox
-                  value={input.username}
+                  value={input.email}
                   onChange={(e) => {
-                    setInput({ ...input, username: e.target.value });
+                    setInput({ ...input, email: e.target.value });
                   }}
-                  placeholder="USERNAME"
+                  placeholder="EMAIL"
                   type="text"
                   required
                 />

@@ -13,12 +13,12 @@ let profiles = [];
 
 app.post("/accounts/authenticate", async function (req, res) {
   bcrypt
-    .compare(req.body.password, users[req.body.username])
+    .compare(req.body.password, users[req.body.email])
     .then((result) => {
       if (result) {
         res.json({
-          token: jwt.sign({ username: req.body.username }, "shhhhh"),
-          username: req.body.username,
+          token: jwt.sign({ email: req.body.email }, "shhhhh"),
+          email: req.body.email,
         });
       } else {
         res.sendStatus(401);
@@ -31,14 +31,14 @@ app.post("/accounts/authenticate", async function (req, res) {
 
 app.post("/accounts/create", async function (req, res) {
   const hash = await bcrypt.hash(req.body.password, 8);
-  users[req.body.username] = hash;
+  users[req.body.email] = hash;
   res.end();
 });
 
 app.post("/profiles/edit", function (req, res) {
   jwt.verify(req.body.token, "shhhhh", function (err, decoded) {
-    console.log(decoded.username);
-    profiles[decoded.username] = req.body;
+    console.log(decoded.email);
+    profiles[decoded.email] = req.body;
   });
   profiles["yo"] = "yoooooo";
   console.log("users");

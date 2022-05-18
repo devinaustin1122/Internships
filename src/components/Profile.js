@@ -27,12 +27,12 @@ const internships = [
 
 const Profile = (props) => {
   return (
-    <main className="dashboard">
+    <>
       <section className="profile">
         <div className="profile__crop">
           <img className="profile__img" src={profile} />
         </div>
-        <h3>{props.user.username}</h3>
+        <h3>{props.user.email}</h3>
         <h3>{props.user.organization}</h3>
         <h4>{props.user.title}</h4>
         <Link to={"/profile/edit"}>
@@ -63,7 +63,7 @@ const Profile = (props) => {
           })}
         </ul>
       </section>
-    </main>
+    </>
   );
 };
 
