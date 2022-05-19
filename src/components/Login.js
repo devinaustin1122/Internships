@@ -147,7 +147,9 @@ const Login = (props) => {
                   required
                 />
                 <StyledButton type="submit">SEND RECOVERY EMAIL</StyledButton>
-                <Link to={"/login"}>return to login</Link>
+                <Link className="link" to={"/login"}>
+                  return to login
+                </Link>
               </form>
             }
           />
