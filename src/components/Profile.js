@@ -32,6 +32,7 @@ const Profile = (props) => {
           <img className="profile__img" src={profile} />
         </div>
         <h2>{props.profile.name}</h2>
+        <h3>{props.user.email}</h3>
         <h3>{props.profile.organization}</h3>
         <h4>{props.profile.title}</h4>
         <Link to={"/profile/edit"}>
@@ -47,7 +48,7 @@ const Profile = (props) => {
         </Link>
       </section>
       <section className="internships">
-        <StyledButton type="button" value="CREATE INTERNSHIP" />
+        <StyledButton>CREATE INTERNSHIP</StyledButton>
         <ul className="internships__list">
           {internships.map((internship) => {
             return (

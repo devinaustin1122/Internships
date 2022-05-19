@@ -82,16 +82,14 @@ const Login = (props) => {
                   type="password"
                   required
                 />
-                <StyledButton value="LOGIN" type="submit" />
+                <StyledButton type="submit">LOGIN</StyledButton>
                 <Link className="link" to={"/account/recover"}>
                   forgot your password?
                 </Link>
                 <Link to={"/account/create"}>
-                  <StyledButton
-                    backgroundColor={"var(--success-color)"}
-                    type="button"
-                    value="CREATE AN ACCOUNT"
-                  />
+                  <StyledButton backgroundColor={"var(--success-color)"}>
+                    CREATE AN ACCOUNT
+                  </StyledButton>
                 </Link>
               </form>
             }
@@ -128,8 +126,10 @@ const Login = (props) => {
                   type="password"
                   required
                 />
-                <StyledButton value="CREATE ACCOUNT" type="submit" />
-                <Link to={"/"}>return to login</Link>
+                <StyledButton type="submit">CREATE ACCOUNT</StyledButton>
+                <Link className="link" to={"/"}>
+                  return to login
+                </Link>
               </form>
             }
           />
@@ -146,7 +146,7 @@ const Login = (props) => {
                   type="text"
                   required
                 />
-                <StyledButton value="SEND RECOVERY EMAIL" type="submit" />
+                <StyledButton type="submit">SEND RECOVERY EMAIL</StyledButton>
                 <Link to={"/login"}>return to login</Link>
               </form>
             }

@@ -76,7 +76,7 @@ const EditProfile = (props) => {
           type="text"
           required
         />
-        <StyledButton value="SAVE" type={"submit"} />
+        <StyledButton type="submit">SAVE</StyledButton>
       </form>
     </section>
   );

@@ -13,6 +13,13 @@ html {
   font-size: 14px;
 }
 
+input,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 section {
   padding: 1rem;
   max-width: 35rem;
@@ -34,7 +41,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  /* may add effect in future */
 }
 
 h1 {
