@@ -13,6 +13,8 @@ const StyledButton = styled.button`
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.5s;
   border-radius: 0.2rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
   ${(props) =>
     props.backgroundColor &&

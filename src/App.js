@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
@@ -9,12 +8,14 @@ import "./App.css";
 
 const App = () => {
   const [user, setUser] = useState(
-    JSON.parse(window.localStorage.getItem("user"))
+    JSON.parse(window.localStorage.getItem("user")) || {}
   );
 
   const [profile, setProfile] = useState(
-    JSON.parse(window.localStorage.getItem("profile"))
+    JSON.parse(window.localStorage.getItem("profile")) || {}
   );
+
+  const [internships, setInternships] = useState([]);
 
   const handleLogout = () => {
     setUser({});
@@ -37,7 +38,13 @@ const App = () => {
               <Routes>
                 <Route
                   path="/profile"
-                  element={<Profile user={user} profile={profile} />}
+                  element={
+                    <Profile
+                      user={user}
+                      profile={profile}
+                      internships={internships}
+                    />
+                  }
                 />
                 <Route
                   path="/profile/edit"
