@@ -26,9 +26,9 @@ const Profile = (props) => {
           <h3>Lets get you started...</h3>
           <p>
             Other people and companies would like to know a little more about
-            you! In order to advertise yourself, first you need to setup your
+            you! In order to advertise yourself, first you need to setup a
             profile. You can add you name, organization and more! Add a profile
-            picture if you want to be more personal.
+            picture if you want to get a little more personal.
           </p>
           <StyledButton onClick={() => navigate("/profile/edit")}>
             CREATE PROFILE
@@ -41,7 +41,6 @@ const Profile = (props) => {
               <img className="profile__img" src={profile} />
             </div>
             <h2>{props.profile.name}</h2>
-            <h4>{props.user.email}</h4>
             <h3>{props.profile.organization}</h3>
             <h4>{props.profile.title}</h4>
             <Link to={"/profile/edit"}>
@@ -57,19 +56,27 @@ const Profile = (props) => {
             </Link>
           </section>
           <section className="internships">
-            <StyledButton>CREATE INTERNSHIP</StyledButton>
+            <StyledButton onClick={() => navigate("/internship/create")}>
+              CREATE INTERNSHIP
+            </StyledButton>
             <ul className="internships__list">
-              {props.internships.map((internship) => {
-                return (
-                  <li key={internship.id} className="internships__item">
-                    <h3>{internship.title}</h3>
-                    <h4>{internship.organization}</h4>
-                    <StyledBadge status={internship.status}>
-                      {internship.status}
-                    </StyledBadge>
-                  </li>
-                );
-              })}
+              {props.internships.length ? (
+                props.internships.map((internship) => {
+                  return (
+                    <li key={internship.id} className="internships__item">
+                      <h3>{internship.title}</h3>
+                      <h4>{internship.organization}</h4>
+                      <StyledBadge status={internship.status}>
+                        {internship.status}
+                      </StyledBadge>
+                    </li>
+                  );
+                })
+              ) : (
+                <>
+                  <h3>You got nothing.</h3>
+                </>
+              )}
             </ul>
           </section>
         </>

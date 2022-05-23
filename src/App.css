@@ -104,6 +104,7 @@
   font-weight: 500;
   color: var(--secondary-color);
   padding: 0.5rem;
+  cursor: pointer;
 }
 
 .navbar__item-logout {
@@ -137,7 +138,7 @@
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   border-radius: 50%;
   margin-top: 2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .profile-cta {
@@ -150,6 +151,11 @@
   height: 1.5rem;
   fill: var(--secondary-color);
   margin-top: 1rem;
+}
+
+.internship-create {
+  margin-top: 3rem;
+  width: 100%;
 }
 
 .internships {
@@ -177,7 +183,7 @@
 }
 
 .logo {
-  height: 2.5rem;
+  height: 2rem;
   margin-bottom: 1rem;
   fill: var(--secondary-color);
 }

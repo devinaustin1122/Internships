@@ -4,6 +4,7 @@ import Login from "./components/Login";
 import Profile from "./components/Profile";
 import Navigation from "./components/Navigation";
 import EditProfile from "./components/EditProfile";
+import CreateInternship from "./components/CreateInternship";
 import "./App.css";
 
 const App = () => {
@@ -55,6 +56,10 @@ const App = () => {
                       setProfile={setProfile}
                     />
                   }
+                />
+                <Route
+                  path="/internship/create"
+                  element={<CreateInternship />}
                 />
               </Routes>
             </div>
