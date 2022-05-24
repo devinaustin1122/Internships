@@ -20,14 +20,11 @@ app.post("/accounts/authenticate", async function (req, res) {
           token: jwt.sign({ email: req.body.email }, "shhhhh"),
           email: req.body.email,
         });
-      } else {
-        res.status(401);
-        res.send("error from server");
       }
     })
     .catch(() => {
-      res.status(500);
-      res.send("error from server");
+      res.status(401);
+      res.send("error from server: incorrect email and password.");
     });
 });
 

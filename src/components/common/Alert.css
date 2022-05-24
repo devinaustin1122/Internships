@@ -3,7 +3,8 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background-color: rgb(255, 221, 221);
+  background-color: rgb(255, 223, 223);
+  color: black;
   border-radius: 0.5rem;
   font-size: 0.8rem;
   padding: 1rem 2rem;
@@ -11,4 +12,15 @@
 
 .alert--open {
   display: block;
+  max-width: 25rem;
+  line-height: 1.5;
+}
+
+.close {
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  fill: var(--secondary-color);
 }

@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./components/Login";
+import Login from "./components/login/Login";
 import Profile from "./components/profile/Profile";
 import Navigation from "./components/Navigation";
-import EditProfile from "./components/EditProfile";
 import CreateInternship from "./components/CreateInternship";
 import "./App.css";
 

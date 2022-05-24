@@ -66,3 +66,12 @@
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
+
+.close {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  fill: var(--secondary-color);
+}

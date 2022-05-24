@@ -9,6 +9,10 @@ const Alert = (props) => {
       setToggle(false);
     } else {
       setToggle(true);
+      setTimeout(() => {
+        setToggle(false);
+        props.setError(undefined);
+      }, 4000);
     }
   }, [props.message]);
 
