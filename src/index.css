@@ -20,7 +20,8 @@ button {
   font-size: inherit;
 }
 
-section {
+section,
+aside {
   padding: 1rem;
   max-width: 35rem;
 }

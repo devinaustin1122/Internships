@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Routes, Route, Navigate, Link, useNavigate } from "react-router-dom";
 import StyledTextbox from "../styles/StyledTexbox";
 import StyledButton from "../styles/StyledButton";
-import logo from "../images/tie.svg";
+import Alert from "./common/Alert";
 
 const Login = (props) => {
   let navigate = useNavigate();
@@ -14,6 +14,8 @@ const Login = (props) => {
     confirm: "",
   });
 
+  const [error, setError] = useState();
+
   const handleLogin = async (e) => {
     e.preventDefault();
     axios
@@ -23,9 +25,10 @@ const Login = (props) => {
       })
       .then(({ data }) => {
         props.setUser(data);
+        setError(undefined);
         navigate("/profile");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => setError(err.response.data));
   };
 
   const handleCreate = async (e) => {
@@ -64,6 +67,7 @@ const Login = (props) => {
             path="/login"
             element={
               <form onSubmit={handleLogin} className="form">
+                <Alert message={error}></Alert>
                 <StyledTextbox
                   value={input.email}
                   onChange={(e) =>

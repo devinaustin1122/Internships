@@ -3,16 +3,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import profile from "../../images/profile.jpeg";
 import StyledButton from "../../styles/StyledButton";
+import ProfileEdit from "./ProfileEdit";
 import InternshipList from "../internship/InternshipList";
+import Modal from "../common/Modal";
 
 const Profile = (props) => {
   const navigate = useNavigate();
-  const [edit, setEdit] = useState(false);
-
-  const handleEdit = () => {
-    setEdit(!edit);
-    document.body.style.overflow = "hidden";
-  };
+  const [toggle, setToggle] = useState(false);
 
   return (
     <main className={"profile"}>
@@ -25,7 +22,7 @@ const Profile = (props) => {
         <h4>{props.profile.title}</h4>
         <svg
           className="profile__edit-toggle"
-          onClick={handleEdit}
+          onClick={() => setToggle(true)}
           width="96"
           height="96"
           viewBox="0 0 96 96"
@@ -40,50 +37,9 @@ const Profile = (props) => {
         </StyledButton>
         <InternshipList />
       </section>
-      <div className={edit ? "profile__edit--open" : "profile__edit--closed"}>
-        <section className="profile__modal">
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-          <p>Hiasl;djfla;sjfl;asdfjas</p>
-        </section>
-      </div>
+      <Modal toggle={toggle}>
+        <ProfileEdit profile={props.profile} setToggle={setToggle} />
+      </Modal>
     </main>
   );
 };

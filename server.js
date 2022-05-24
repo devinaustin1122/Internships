@@ -21,11 +21,13 @@ app.post("/accounts/authenticate", async function (req, res) {
           email: req.body.email,
         });
       } else {
-        res.sendStatus(401);
+        res.status(401);
+        res.send("error from server");
       }
     })
     .catch(() => {
-      res.sendStatus(500);
+      res.status(500);
+      res.send("error from server");
     });
 });
 

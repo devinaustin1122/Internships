@@ -1,0 +1,14 @@
+.alert {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: rgb(255, 221, 221);
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  padding: 1rem 2rem;
+}
+
+.alert--open {
+  display: block;
+}
