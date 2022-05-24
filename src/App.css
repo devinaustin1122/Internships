@@ -16,19 +16,9 @@
 
 .app {
   display: flex;
-  justify-content: center;
-}
-
-.app__container {
-  width: 100%;
-}
-
-.app__content {
-  display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  padding-bottom: 5rem;
 }
 
 .login {
@@ -114,62 +104,6 @@
   padding: 0.5rem 1.5rem;
 }
 
-.profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  text-align: center;
-  width: 100%;
-}
-
-.profile-edit {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-}
-
-.profile__crop {
-  width: 8rem;
-  height: 8rem;
-  overflow: hidden;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  border-radius: 50%;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-.profile-cta {
-  margin-top: 3rem;
-  width: 100%;
-}
-
-.profile__edit {
-  width: 1.5rem;
-  height: 1.5rem;
-  fill: var(--secondary-color);
-  margin-top: 1rem;
-}
-
-.internship-create {
-  margin-top: 3rem;
-  width: 100%;
-}
-
-.internships {
-  width: 100%;
-}
-
-.internships__item {
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  padding: 1rem;
-  border-left: solid 1rem var(--primary-color);
-  margin: 1rem 0;
-}
-
 .back {
   position: absolute;
   left: 0;
@@ -196,10 +130,6 @@
 @media screen and (min-width: 750px) {
   .app {
     padding-bottom: 5rem;
-  }
-
-  .app__container {
-    flex-direction: row;
   }
 
   .navbar {

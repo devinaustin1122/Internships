@@ -1,0 +1,61 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.profile__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.profile__crop {
+  width: 8rem;
+  height: 8rem;
+  overflow: hidden;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border-radius: 50%;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.profile__edit-toggle {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--secondary-color);
+  margin-top: 1rem;
+}
+
+.profile__internships {
+  width: 100%;
+}
+
+.profile__edit--closed {
+  display: none;
+}
+
+.profile__edit--open {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: rgba(0, 0, 0, 0.157);
+  z-index: 2;
+  overflow-y: auto;
+}
+
+.profile__modal {
+  margin: 5rem 0;
+  width: 100%;
+  height: 80vh;
+  background-color: white;
+  overflow: auto;
+}

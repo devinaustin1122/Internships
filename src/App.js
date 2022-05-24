@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
-import Profile from "./components/Profile";
+import Profile from "./components/profile/Profile";
 import Navigation from "./components/Navigation";
 import EditProfile from "./components/EditProfile";
 import CreateInternship from "./components/CreateInternship";
@@ -33,37 +33,22 @@ const App = () => {
       <BrowserRouter>
         {!user.token && <Login setUser={setUser} />}
         {user.token && (
-          <div className="app__container">
+          <>
             <Navigation handleLogout={handleLogout} />
-            <div className="app__content">
-              <Routes>
-                <Route
-                  path="/profile"
-                  element={
-                    <Profile
-                      user={user}
-                      profile={profile}
-                      internships={internships}
-                    />
-                  }
-                />
-                <Route
-                  path="/profile/edit"
-                  element={
-                    <EditProfile
-                      user={user}
-                      profile={profile}
-                      setProfile={setProfile}
-                    />
-                  }
-                />
-                <Route
-                  path="/internship/create"
-                  element={<CreateInternship />}
-                />
-              </Routes>
-            </div>
-          </div>
+            <Routes>
+              <Route
+                path="/profile"
+                element={
+                  <Profile
+                    user={user}
+                    profile={profile}
+                    internships={internships}
+                  />
+                }
+              />
+              <Route path="/internship/create" element={<CreateInternship />} />
+            </Routes>
+          </>
         )}
       </BrowserRouter>
       <footer className="app__footer"></footer>
