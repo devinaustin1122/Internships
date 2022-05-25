@@ -5,40 +5,38 @@ import StyledTextbox from "../../styles/StyledTexbox";
 import StyledButton from "../../styles/StyledButton";
 import Alert from "../common/Alert";
 
-const LoginCreate = () => {
+const Login = (props) => {
   const navigate = useNavigate();
 
   const [input, setInput] = useState({
     email: "",
     password: "",
-    confirm: "",
   });
 
   const [error, setError] = useState("");
 
-  const handleCreate = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (input.password === input.confirm) {
-      await axios.post("http://localhost:3001/accounts/create", {
+    axios
+      .post("http://localhost:3001/accounts/authenticate", {
         email: input.email,
         password: input.password,
-      });
-      navigate("/login");
-    } else {
-      setError("they don't match");
-    }
+      })
+      .then(({ data }) => {
+        props.setUser(data);
+        navigate("/profile");
+      })
+      .catch((err) => setError(err.response.data));
   };
 
   // Maybe I can use a custom hook here for my alerts?
 
   return (
-    <form onSubmit={handleCreate} className="form">
-      <Alert message={error} setError={setError} />
+    <form onSubmit={handleLogin} className="form">
+      <Alert message={error} setError={setError}></Alert>
       <StyledTextbox
         value={input.email}
-        onChange={(e) => {
-          setInput({ ...input, email: e.target.value });
-        }}
+        onChange={(e) => setInput({ ...input, email: e.target.value })}
         placeholder="EMAIL"
         type="text"
         required
@@ -52,22 +50,17 @@ const LoginCreate = () => {
         type="password"
         required
       />
-      <StyledTextbox
-        value={input.confirm}
-        onChange={(e) => {
-          setInput({ ...input, confirm: e.target.value });
-        }}
-        invalid={input.confirm !== input.password}
-        placeholder="CONFIRM PASSWORD"
-        type="password"
-        required
-      />
-      <StyledButton type="submit">CREATE ACCOUNT</StyledButton>
-      <Link className="link" to={"/"}>
-        return to login
+      <StyledButton type="submit">LOGIN</StyledButton>
+      <Link className="link" to={"/account/recover"}>
+        forgot your password?
+      </Link>
+      <Link to={"/account/create"}>
+        <StyledButton backgroundColor={"var(--success-color)"}>
+          CREATE AN ACCOUNT
+        </StyledButton>
       </Link>
     </form>
   );
 };
 
-export default LoginCreate;
+export default Login;

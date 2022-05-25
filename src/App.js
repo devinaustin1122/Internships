@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/login/Login";
 import Profile from "./components/profile/Profile";
 import Navigation from "./components/Navigation";
-import CreateInternship from "./components/CreateInternship";
 import "./App.css";
 
 const App = () => {
@@ -45,7 +44,6 @@ const App = () => {
                   />
                 }
               />
-              <Route path="/internship/create" element={<CreateInternship />} />
             </Routes>
           </>
         )}

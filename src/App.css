@@ -21,31 +21,6 @@
   align-items: center;
 }
 
-.login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  color: var(--secondary-color);
-}
-
-.login__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.login__heading {
-  margin-bottom: 2rem;
-}
-
-.login__logo {
-  width: 0.5rem;
-  fill: var(--secondary-color);
-}
-
 .form {
   display: flex;
   flex-direction: column;

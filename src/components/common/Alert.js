@@ -5,14 +5,14 @@ const Alert = (props) => {
   const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
-    if (props.message === undefined) {
-      setToggle(false);
-    } else {
+    if (props.message) {
       setToggle(true);
       setTimeout(() => {
         setToggle(false);
         props.setError(undefined);
       }, 4000);
+    } else {
+      setToggle(false);
     }
   }, [props.message]);
 

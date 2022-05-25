@@ -1,37 +1,10 @@
-import axios from "axios";
-import { useState, useEffect, useInsertionEffect } from "react";
-import { Routes, Route, Navigate, Link, useNavigate } from "react-router-dom";
-import StyledTextbox from "../../styles/StyledTexbox";
-import StyledButton from "../../styles/StyledButton";
+import "./Login.css";
+import { Routes, Route, Navigate } from "react-router-dom";
+import LoginAuthenticate from "./LoginAuthenticate";
 import LoginCreate from "./LoginCreate";
 import LoginRecover from "./LoginRecover";
-import Alert from "../common/Alert";
 
 const Login = (props) => {
-  const navigate = useNavigate();
-
-  const [input, setInput] = useState({
-    email: "",
-    password: "",
-  });
-
-  const [error, setError] = useState();
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:3001/accounts/authenticate", {
-        email: input.email,
-        password: input.password,
-      })
-      .then(({ data }) => {
-        props.setUser(data);
-        setError(undefined);
-        navigate("/profile");
-      })
-      .catch((err) => setError(err.response.data));
-  };
-
   return (
     <section className="login">
       <div className="login__container">
@@ -51,44 +24,60 @@ const Login = (props) => {
         <Routes>
           <Route
             path="/login"
-            element={
-              <form onSubmit={handleLogin} className="form">
-                <Alert message={error} setError={setError}></Alert>
-                <StyledTextbox
-                  value={input.email}
-                  onChange={(e) =>
-                    setInput({ ...input, email: e.target.value })
-                  }
-                  placeholder="EMAIL"
-                  type="text"
-                  required
-                />
-                <StyledTextbox
-                  value={input.password}
-                  onChange={(e) => {
-                    setInput({ ...input, password: e.target.value });
-                  }}
-                  placeholder="PASSWORD"
-                  type="password"
-                  required
-                />
-                <StyledButton type="submit">LOGIN</StyledButton>
-                <Link className="link" to={"/account/recover"}>
-                  forgot your password?
-                </Link>
-                <Link to={"/account/create"}>
-                  <StyledButton backgroundColor={"var(--success-color)"}>
-                    CREATE AN ACCOUNT
-                  </StyledButton>
-                </Link>
-              </form>
-            }
+            element={<LoginAuthenticate setUser={props.setUser} />}
           />
           <Route path="/account/create" element={<LoginCreate />} />
           <Route path="/account/recover" element={<LoginRecover />} />
           <Route path="*" element={<Navigate to="/login" />} />{" "}
         </Routes>
       </div>
+
+      <svg
+        className="circle-1"
+        width="196"
+        height="196"
+        viewBox="0 0 196 196"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="98" cy="98" r="98" fill="url(#paint0_radial_2_2)" />
+        <defs>
+          <radialGradient
+            id="paint0_radial_2_2"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(98 98) rotate(90) scale(98)"
+          >
+            <stop stop-color="#004280" stop-opacity="0.2" />
+            <stop offset="1" stop-color="#004280" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+      </svg>
+      <svg
+        className="circle-2"
+        width="196"
+        height="196"
+        viewBox="0 0 196 196"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="98" cy="98" r="98" fill="url(#paint0_radial_2_2)" />
+        <defs>
+          <radialGradient
+            id="paint0_radial_2_2"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(98 98) rotate(90) scale(98)"
+          >
+            <stop stop-color="#004280" stop-opacity="0.22" />
+            <stop offset="1" stop-color="#004280" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+      </svg>
     </section>
   );
 };

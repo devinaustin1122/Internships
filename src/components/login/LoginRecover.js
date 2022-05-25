@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Login.css";
 import StyledTextbox from "../../styles/StyledTexbox";
 import StyledButton from "../../styles/StyledButton";
 import Alert from "../common/Alert";
