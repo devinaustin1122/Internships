@@ -3,17 +3,29 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background-color: rgb(255, 223, 223);
-  color: black;
-  border-radius: 0.5rem;
-  font-size: 0.8rem;
+  background-color: rgb(255, 72, 72);
+  border-left: solid 1rem #ff9f9f;
+  color: white;
+  border-radius: 0.2rem;
+  font-size: 1rem;
   padding: 1rem 2rem;
+  text-align: center;
 }
 
 .alert--open {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
   max-width: 25rem;
   line-height: 1.5;
+}
+
+.alert__icon {
+  fill: white;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 .close {

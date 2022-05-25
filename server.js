@@ -22,12 +22,12 @@ app.post("/accounts/authenticate", async function (req, res) {
         });
       } else {
         res.status(401);
-        res.send("the password was incorrect");
+        res.send("The email and/or password were incorrect.");
       }
     })
     .catch(() => {
       res.status(401);
-      res.send("the email and password were incorrect");
+      res.send("The email and/or password were incorrect.");
     });
 });
 
@@ -45,7 +45,6 @@ app.post("/profiles/edit", function (req, res) {
 });
 
 app.get("/profiles/:email", function (req, res) {
-  console.log(req.params.email);
   res.json({
     ...profiles[req.params.email],
   });

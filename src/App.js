@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/login/Login";
 import Profile from "./components/profile/Profile";
-import Navigation from "./components/Navigation";
+import Navigation from "./components/common/Navigation";
+import circle from "./images/circle.svg";
 import "./App.css";
 
 const App = () => {
@@ -49,6 +50,8 @@ const App = () => {
         )}
       </BrowserRouter>
       <footer className="app__footer"></footer>
+      <img className="circle-1" src={circle} />
+      <img className="circle-2" src={circle} />
     </div>
   );
 };

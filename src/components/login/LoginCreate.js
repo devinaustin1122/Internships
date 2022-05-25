@@ -25,7 +25,7 @@ const LoginCreate = () => {
       });
       navigate("/login");
     } else {
-      setError("they don't match");
+      setError("The passord and confirmation do not match.");
     }
   };
 
