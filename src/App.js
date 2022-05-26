@@ -50,8 +50,6 @@ const App = () => {
         )}
       </BrowserRouter>
       <footer className="app__footer"></footer>
-      <img className="circle-1" src={circle} />
-      <img className="circle-2" src={circle} />
     </div>
   );
 };

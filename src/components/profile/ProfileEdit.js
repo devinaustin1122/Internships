@@ -16,9 +16,13 @@ const ProfileEdit = (props) => {
         <img className="profile__img" src={profile} />
       </figure>
       <a className="link">select profile picture</a>
-      <StyledTextbox>{props.profile.name}</StyledTextbox>
-      <StyledTextbox>{props.profile.organization}</StyledTextbox>
-      <StyledTextbox>{props.profile.title}</StyledTextbox>
+      <StyledTextbox placeholder="FULL NAME">
+        {props.profile.name}
+      </StyledTextbox>
+      <StyledTextbox placeholder="ORGANIZATION">
+        {props.profile.organization}
+      </StyledTextbox>
+      <StyledTextbox placeholder="TITLE">{props.profile.title}</StyledTextbox>
       <StyledButton>SAVE CHANGES</StyledButton>
     </>
   );

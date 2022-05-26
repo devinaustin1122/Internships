@@ -6,6 +6,14 @@
   margin-top: 2rem;
 }
 
+.profile__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
 .profile__header {
   display: flex;
   flex-direction: column;
@@ -75,4 +83,42 @@
   top: 1rem;
   right: 1rem;
   fill: var(--secondary-color);
+}
+
+@media screen and (min-width: 750px) {
+  .profile {
+    flex-direction: row;
+    justify-content: center;
+    align-items: unset;
+  }
+
+  .profile__content {
+    flex-direction: row;
+    justify-content: start;
+    align-items: unset;
+    max-width: 60rem;
+    padding: 1rem;
+  }
+
+  .profile__crop {
+    box-shadow: unset;
+  }
+
+  .profile__header {
+    background-color: var(--primary-color);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    width: unset;
+  }
+
+  .profile__internships {
+    width: 100%;
+    margin-left: 2rem;
+  }
+
+  .profile__crop {
+    margin-top: 0;
+  }
 }

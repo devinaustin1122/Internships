@@ -10,7 +10,7 @@ const StyledTextbox = styled.input`
   margin: 0.8rem 0;
   width: 100%;
   color: #3d3d3d;
-  background-color: var(--primary-color);
+  background-color: #ececec;
   ${(props) =>
     props.invalid &&
     css`
