@@ -55,7 +55,7 @@ const Navigation = (props) => {
           className="navbar__item navbar__item--logout"
           onClick={() => handleLogout()}
         >
-          Logout
+          LOGOUT
         </li>
       </ul>
     </nav>

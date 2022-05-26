@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/login/Login";
 import Profile from "./components/profile/Profile";
+import Home from "./components/home/Home";
 import Navigation from "./components/common/Navigation";
 import circle from "./images/circle.svg";
 import "./App.css";
@@ -45,6 +46,7 @@ const App = () => {
                   />
                 }
               />
+              <Route path="/home" element={<Home />} />
             </Routes>
           </>
         )}

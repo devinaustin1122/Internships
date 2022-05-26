@@ -7,7 +7,7 @@ import LoginRecover from "./LoginRecover";
 const Login = (props) => {
   return (
     <section className="login">
-      <div className="login__container">
+      <div className="login__content">
         <svg
           className="login__logo"
           width="9"

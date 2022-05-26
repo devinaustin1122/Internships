@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 2rem;
 }
 
 .profile__content {
@@ -11,10 +10,9 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 2rem;
 }
 
-.profile__header {
+.profile__header__content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,8 +27,15 @@
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   border-radius: 50%;
+  border: solid 1px #f3f3f3;
   margin-top: 2rem;
   margin-bottom: 1rem;
+}
+
+.profile__img {
+  width: 8rem;
+  height: 8rem;
+  fill: var(--secondary-color);
 }
 
 .profile__edit-toggle {
@@ -104,13 +109,14 @@
     box-shadow: unset;
   }
 
-  .profile__header {
+  .profile__header__content {
     background-color: var(--primary-color);
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
       rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     padding: 3rem;
     border-radius: 0.5rem;
     width: unset;
+    align-self: flex-start;
   }
 
   .profile__internships {

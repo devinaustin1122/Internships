@@ -9,7 +9,7 @@ const StyledButton = styled.button`
   font-size: 1rem;
   text-align: center;
   padding: 1em;
-  margin: 1rem 0;
+  margin-bottom: 2rem;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.5s;
   border-radius: 0.2rem;

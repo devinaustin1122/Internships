@@ -6,7 +6,7 @@
   color: var(--secondary-color);
 }
 
-.login__container {
+.login__content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +24,7 @@
 }
 
 @media screen and (min-width: 750px) {
-  .login__container {
+  .login__content {
     position: inherit;
     z-index: 1;
     background-color: white;

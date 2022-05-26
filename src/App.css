@@ -19,6 +19,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5rem;
 }
 
 .form {
@@ -48,5 +49,5 @@
 
 .link {
   color: var(--accent-color);
-  margin: 0.5rem 0;
+  margin-bottom: 2rem;
 }
