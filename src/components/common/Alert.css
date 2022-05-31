@@ -29,12 +29,3 @@
   min-width: 1.5rem;
   margin-right: 1.5rem;
 }
-
-.close {
-  width: 1rem;
-  height: 1rem;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  fill: var(--secondary-color);
-}
