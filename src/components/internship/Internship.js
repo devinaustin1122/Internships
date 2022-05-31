@@ -27,6 +27,11 @@ const Internship = () => {
           placerat, lacus a sodales convallis, magna quam pretium dui, eget
           congue leo nulla sit amet nunc.{" "}
         </p>
+        <div className="internship__tags">
+          <span className="internship__tag">IT</span>
+          <span className="internship__tag">Software Development</span>
+          <span className="internship__tag">Hiring</span>
+        </div>
       </div>
     </>
   );

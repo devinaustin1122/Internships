@@ -26,3 +26,15 @@
 .internship__list {
   width: 100%;
 }
+
+.internship__tags {
+  display: flex;
+}
+
+.internship__tag {
+  color: black;
+  background-color: #ececec;
+  border-radius: 2rem;
+  padding: 0.2rem 1rem;
+  margin: 0.2rem;
+}
