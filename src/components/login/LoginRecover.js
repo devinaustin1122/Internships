@@ -18,7 +18,7 @@ const LoginRecover = () => {
         onChange={(e) => {
           setEmail(e.target.value);
         }}
-        placeholder="EMAIL"
+        placeholder="Email"
         type="text"
         required
       />

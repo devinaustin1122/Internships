@@ -39,7 +39,7 @@ const LoginCreate = () => {
         onChange={(e) => {
           setInput({ ...input, email: e.target.value });
         }}
-        placeholder="EMAIL"
+        placeholder="Email"
         type="text"
         required
       />
@@ -48,7 +48,7 @@ const LoginCreate = () => {
         onChange={(e) => {
           setInput({ ...input, password: e.target.value });
         }}
-        placeholder="PASSWORD"
+        placeholder="Password"
         type="password"
         required
       />
@@ -58,7 +58,7 @@ const LoginCreate = () => {
           setInput({ ...input, confirm: e.target.value });
         }}
         invalid={input.confirm !== input.password}
-        placeholder="CONFIRM PASSWORD"
+        placeholder="Confirm password"
         type="password"
         required
       />

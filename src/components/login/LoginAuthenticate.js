@@ -37,7 +37,7 @@ const Login = (props) => {
       <StyledTextbox
         value={input.email}
         onChange={(e) => setInput({ ...input, email: e.target.value })}
-        placeholder="EMAIL"
+        placeholder="Email"
         type="text"
         required
       />
@@ -46,7 +46,7 @@ const Login = (props) => {
         onChange={(e) => {
           setInput({ ...input, password: e.target.value });
         }}
-        placeholder="PASSWORD"
+        placeholder="Password"
         type="password"
         required
       />

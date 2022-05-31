@@ -6,4 +6,12 @@
 
 .explore__header {
   margin: 1rem;
+  display: flex;
+  background-color: white;
+}
+
+.explore__add {
+  height: 3rem;
+  margin-left: 1rem;
+  fill: var(--secondary-color);
 }
